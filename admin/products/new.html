@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administration</title>
+    <link rel="stylesheet" href="/admin/products/css/new.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h2>Administration</h2>
+      </header>
+      <aside>
+        <h2>Produkter</h2>
+      </aside>
+      <main>
+        <h1>Ny produkt</h1>
+
+        <form method="post" action="/">
+          <label for="produkt-name">Name</label>
+          <input type="text" id="produkt-name" name="produkt-name" />
+
+          <label for="produkt-beskrivning">Beskrivning</label>
+          <textarea
+            id="produkt-beskrivning"
+            name="produkt-beskrivning"
+            rows="5"
+            cols="50"
+          ></textarea>
+
+          <label for="produkt-bild">Bild</label>
+          <input type="file" id="produkt-bild" name="produkt-bild" />
+
+          <label for="produkt-sku">SKU</label>
+          <input type="text" id="produkt-sku" name="produkt-sku" />
+
+          <label for="produkt-pris">Pris</label>
+          <input type="number" id="produkt-pris" name="produkt-pris" />
+
+          <fieldset>
+            <legend>Kategorier</legend>
+            <label for="personal-account" class="kategori"
+              ><input
+                type="checkbox"
+                id="personal-account"
+                name="account-type"
+                value="T-Shirts"
+              />
+              T-Shirts</label
+            >
+
+            <label for="business-account" class="kategori"
+              ><input
+                type="checkbox"
+                id="business-account"
+                name="account-type"
+                value="Sommar"
+              />
+              Sommar</label
+            >
+
+            <label for="business-account" class="kategori"
+              ><input
+                type="checkbox"
+                id="business-account"
+                name="account-type"
+                value="Byxor"
+              />
+              Byxor</label
+            >
+
+            <label for="business-account" class="kategori"
+              ><input
+                type="checkbox"
+                id="business-account"
+                name="account-type"
+                value="Skor"
+              />
+              Skor</label
+            >
+          </fieldset>
+
+          <a href="/">
+            <div class="button">Lägg till</div>
+          </a>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
