@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="sv">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="mode, kläder, rea" />
-    <title>Freaky Fashion</title>
-    <link rel="stylesheet" href="/css/product-details.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="mode, kläder, rea">
+    <title>Svart T-Shirt</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
-    />
+    >
+    <link rel="stylesheet" href="/css/product-details.css">
   </head>
   <body>
     <div class="page-layout-grid">
@@ -19,16 +19,14 @@
         <div class="header-logo">
           <img
             class="resize"
-            src="https://placehold.co/300x150/png"
+            src="https://placehold.co/300x100/png"
             alt="Logo"
-          />
+          >
         </div>
         <div class="form-div">
-          <form action="/" id="form" name="search-form" metod="post">
+          <form action="#" id="form" name="search-form" method="post">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="1.5rem"
-              height="1.5rem"
               fill="currentColor"
               class="bi bi-search"
               viewBox="0 0 16 16"
@@ -42,11 +40,11 @@
               id="search"
               name="search-input"
               placeholder="Sök produkt"
-            />
+            >
           </form>
         </div>
         <div class="icons">
-          <a href="/" target="_self">
+          <a href="#" target="_self">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="2rem"
@@ -62,7 +60,7 @@
               />
             </svg>
           </a>
-          <a href="/" target="_self">
+          <a href="#" target="_self">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="2rem"
@@ -80,11 +78,13 @@
         </div>
 
         <nav>
-          <a href="/" target="_self">Nyheter</a>
-          <a href="/" target="_self" class="hidden">Kategorier</a>
-          <a href="/" target="_self">Topplistan</a>
-          <a href="/" target="_self">Rea</a>
-          <a href="/" target="_self">Kampanjer</a>
+          <ul>
+            <li><a href="#" target="_self">Nyheter</a></li>
+            <li class="hidden"><a href="#" target="_self">Kategorier</a></li>
+            <li><a href="#" target="_self">Topplistan</a></li>
+            <li><a href="#" target="_self">Rea</a></li>
+            <li><a href="#" target="_self">Kampanjer</a></li>
+          </ul>
         </nav>
       </header>
 
@@ -106,25 +106,27 @@
             </svg>
             <img
               class="resize"
-              src="https://placehold.co/400x600/png"
-              alt="Main photo"
-            />
+              src="/img/Namnlös-big.png"
+              alt="Tjej i en svart t-shirt"
+            >
           </div>
           <div class="banner-main-text">
             <h1>Svart T-Shirt</h1>
             <p><i class="size">Levis</i></p>
             <p class="text-fix">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt accusamus at dicta vitae error, doloribus quidem architecto ipsam. Soluta, mollitia?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+              accusamus at dicta vitae error, doloribus quidem architecto ipsam.
+              Soluta, mollitia?
             </p>
             <p>199 SEK</p>
-            <form id="form-button" name="form-button" method="post" action="/">
+            <form id="form-button" name="form-button" method="post" action="#">
               <button type="submit" class="size">Lägg i varukorg</button>
             </form>
           </div>
         </section>
 
         <section class="banner-second hidden">
-          <h4>Liknande produkter</h4>
+          <h3>Liknande produkter</h3>
 
           <a href="http://localhost:5000/product-details.html" target="_self">
             <div class="banner-second-item item1">
@@ -132,7 +134,7 @@
                 class="resize"
                 src="https://placehold.co/300x400/png"
                 alt="Svart T-Shirt"
-              />
+              >
               <div class="banner-second-text">
                 <span>Svart T-Shirt</span>
                 <span>199 SEK</span>
@@ -147,7 +149,7 @@
                 class="resize"
                 src="https://placehold.co/300x400/png"
                 alt="Svart T-Shirt"
-              />
+              >
               <div class="banner-second-text">
                 <span>Svart T-Shirt</span>
                 <span>199 SEK</span>
@@ -162,7 +164,7 @@
                 class="resize"
                 src="https://placehold.co/300x400/png"
                 alt="Svart T-Shirt"
-              />
+              >
               <div class="banner-second-text">
                 <span>Svart T-Shirt</span>
                 <span>199 SEK</span>
@@ -181,7 +183,7 @@
               width="3rem"
               height="3rem"
               fill="currentColor"
-              class="bi bi-globe-central-south-asia"
+              class="bi bi-globe-central-south-asia svg"
               viewBox="0 0 16 16"
             >
               <path
@@ -195,9 +197,8 @@
               xmlns="http://www.w3.org/2000/svg"
               width="3rem"
               height="3rem"
-              transform="rotate(90)"
               fill="currentColor"
-              class="bi bi-airplane-engines-fill"
+              class="bi bi-airplane-engines-fill svg"
               viewBox="0 0 16 16"
             >
               <path
@@ -212,7 +213,7 @@
               width="3rem"
               height="3rem"
               fill="currentColor"
-              class="bi bi-shield-shaded"
+              class="bi bi-shield-shaded svg"
               viewBox="0 0 16 16"
             >
               <path
@@ -228,7 +229,7 @@
               width="3rem"
               height="3rem"
               fill="currentColor"
-              class="bi bi-emoji-smile"
+              class="bi bi-emoji-smile svg"
               viewBox="0 0 16 16"
             >
               <path
@@ -244,92 +245,115 @@
       </aside>
 
       <footer>
-        <div
-          class="accordion accordion-flush footer-first"
-          id="accordionFlushExample"
-        >
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne"
-                aria-expanded="false"
-                aria-controls="flush-collapseOne"
+        <div class="footer-first">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  Shopping
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
               >
-                Shopping
-              </button>
-            </h2>
-            <div
-              id="flush-collapseOne"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionFlushExample"
-            >
-              <div class="accordion-body">
-                <ul>
-                  <li>Vinterjackor</li>
-                  <li>Pufferjackor</li>
-                  <li>Kappa</li>
-                  <li>Trenchcoats</li>
-                </ul>
+                <div class="accordion-body">
+                  <ul>
+                    <li>Vinterjackor</li>
+                    <li>Pufferjackor</li>
+                    <li>Kappa</li>
+                    <li>Trenchcoats</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseTwo"
+                >
+                  Mina Sidor
+                </button>
+              </h2>
+              <div
+                id="flush-collapseTwo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  <ul>
+                    <li>Mina Ordrar</li>
+                    <li>Mitt Konto</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseThree"
+                >
+                  Kundtjänst
+                </button>
+              </h2>
+              <div
+                id="flush-collapseThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  <ul>
+                    <li>Returnpolicy</li>
+                    <li>Integritetspolicy</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseTwo"
-                aria-expanded="false"
-                aria-controls="flush-collapseTwo"
-              >
-                Mina Sidor
-              </button>
-            </h2>
-            <div
-              id="flush-collapseTwo"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionFlushExample"
-            >
-              <div class="accordion-body">
-                <ul>
-                  <li>Mina Ordrar</li>
-                  <li>Mitt Konto</li>
-                </ul>
-              </div>
+          <div class="footer-variant2 hidden">
+            <div class="footer-shopping">
+              <ul>
+                <li>Shopping</li>
+                <li>Vinterjackor</li>
+                <li>Pufferjackor</li>
+                <li>Kappa</li>
+                <li>Trenchcoats</li>
+              </ul>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseThree"
-                aria-expanded="false"
-                aria-controls="flush-collapseThree"
-              >
-                Kundtjänst
-              </button>
-            </h2>
-            <div
-              id="flush-collapseThree"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionFlushExample"
-            >
-              <div class="accordion-body">
-                <ul>
-                  <li>Returnpolicy</li>
-                  <li>Integritetspolicy</li>
-                </ul>
-              </div>
+            <div class="footer-minaSidor">
+              <ul>
+                <li>Mina Sidor</li>
+                <li>Mina Ordrar</li>
+                <li>Mitt Konto</li>
+              </ul>
+            </div>
+            <div class="footer-kundTjanst">
+              <ul>
+                <li>Kundtjänst</li>
+                <li>Returnpolicy</li>
+                <li>Integritetspolicy</li>
+              </ul>
             </div>
           </div>
         </div>
-
         <div class="footer-copyright">
           <svg
             xmlns="http://www.w3.org/2000/svg"

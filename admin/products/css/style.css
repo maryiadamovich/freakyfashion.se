@@ -1,97 +1,123 @@
-:root{
+:root {
     --background-color-header: black;
     --background-color-aside: rgb(202, 202, 202);
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-h2, h1{
-    padding-left: 3rem;
-}
-.container{
+
+.container {
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-columns: 25% 1fr;
+    grid-template-columns: minmax(130px, 25%) 1fr;
     grid-template-rows: 15% 1fr;
 }
-header{
+
+header {
     grid-area: 1/1/2/3;
     background-color: var(--background-color-header);
     align-content: center;
 }
-header h2{
+
+header h2 {
     color: white;
-    align-items: center;
+    padding-left: 3%;
 }
-aside{
+
+aside {
     grid-area: 2/1/3/2;
     background-color: var(--background-color-aside);
     margin-bottom: 2rem;
     border: 2px solid black;
+    border-top: none;
 }
-aside h2, h1{
-    padding-top: 3rem;
+
+aside h2 {
+    padding-top: 2.5rem;
+    padding-left: 10%;
 }
-article{
+
+article {
     grid-area: 2/2/3/3;
 }
-article div{
+
+article div {
     display: grid;
-    grid-template-columns: 1fr 20%;
-    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 25%;
+    grid-template-rows: 1fr 3fr;
+    margin: 0 5%;
 }
-h1{
+
+h1 {
     grid-area: 1/1/2/2;
     color: black;
     font-weight: bold;
     font-size: 2em;
+    align-self: end;
 }
-.button{
-    width: 70%;
+
+.button {
+    width: 100px;
     height: 30%;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 0.7rem;
     margin-bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
+    text-wrap: nowrap;
+    font-weight: bold;
 }
-a{
+
+a {
     grid-area: 1/2/2/3;
     align-self: end;
     text-decoration: none;
     color: black;
+    justify-self: end;
+    margin-right: 5px;
 }
-table{
+
+table {
     grid-area: 2/1/3/3;
-    width: 90%;
+    width: 100%;
     border-collapse: collapse;
     justify-self: center;
     margin-top: 2rem;
 }
-table, td, th {
-    border: 2px solid;   
-  }
-tr{
+
+table,
+td,
+th {
+    border: 2px solid;
+}
+
+tr {
     height: 3rem;
 }
-tr:first-of-type{
+
+tr:first-of-type {
     height: 2rem;
     background-color: rgb(203, 202, 202);
     text-align: left;
 }
-tr:nth-child(even){
+
+tr:nth-child(even) {
     background-color: rgb(237, 237, 237);
 }
-td, th{
+
+td,
+th {
     padding-left: 5px;
 }
-td{
+
+td {
     border-bottom: none;
     border-top: none;
 }

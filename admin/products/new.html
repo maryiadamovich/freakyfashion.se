@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="sv">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration</title>
-    <link rel="stylesheet" href="/admin/products/css/new.css" />
+    <link rel="stylesheet" href="/admin/products/css/new.css">
   </head>
   <body>
     <div class="container">
@@ -18,8 +18,8 @@
         <h1>Ny produkt</h1>
 
         <form method="post" action="/">
-          <label for="produkt-name">Name</label>
-          <input type="text" id="produkt-name" name="produkt-name" />
+          <label for="produkt-namn">Namn</label>
+          <input type="text" id="produkt-namn" name="produkt-namn">
 
           <label for="produkt-beskrivning">Beskrivning</label>
           <textarea
@@ -30,58 +30,58 @@
           ></textarea>
 
           <label for="produkt-bild">Bild</label>
-          <input type="file" id="produkt-bild" name="produkt-bild" />
+          <input type="file" id="produkt-bild" name="produkt-bild">
 
           <label for="produkt-sku">SKU</label>
-          <input type="text" id="produkt-sku" name="produkt-sku" />
+          <input type="text" id="produkt-sku" name="produkt-sku">
 
           <label for="produkt-pris">Pris</label>
-          <input type="number" id="produkt-pris" name="produkt-pris" />
+          <input type="number" id="produkt-pris" name="produkt-pris">
 
           <fieldset>
             <legend>Kategorier</legend>
-            <label for="personal-account" class="kategori"
+            <label for="produkt-t-shirts" class="kategori"
               ><input
                 type="checkbox"
-                id="personal-account"
-                name="account-type"
+                id="produkt-t-shirts"
+                name="produkt-type-t-shirts"
                 value="T-Shirts"
-              />
+              >
               T-Shirts</label
             >
 
-            <label for="business-account" class="kategori"
+            <label for="produkt-sommar" class="kategori"
               ><input
                 type="checkbox"
-                id="business-account"
-                name="account-type"
+                id="produkt-sommar"
+                name="produkt-type-sommar"
                 value="Sommar"
-              />
+              >
               Sommar</label
             >
 
-            <label for="business-account" class="kategori"
+            <label for="produkt-byxor" class="kategori"
               ><input
                 type="checkbox"
-                id="business-account"
-                name="account-type"
+                id="produkt-byxor"
+                name="produkt-type-byxor"
                 value="Byxor"
-              />
+              >
               Byxor</label
             >
 
-            <label for="business-account" class="kategori"
+            <label for="produkt-skor" class="kategori"
               ><input
                 type="checkbox"
-                id="business-account"
-                name="account-type"
+                id="produkt-skor"
+                name="produkt-type-skor"
                 value="Skor"
-              />
+              >
               Skor</label
             >
           </fieldset>
 
-          <a href="/">
+          <a href="#">
             <div class="button">Lägg till</div>
           </a>
         </form>
