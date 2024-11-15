@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration</title>
     <link rel="stylesheet" href="/stylesheets/admin/style.css">
+    <script src="/javascripts/main.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -17,8 +18,11 @@
       <article>
         <div>
           <h1>Produkter</h1>
+          <a href="#" id="fetch-link">
+            <div class="button one">Ladda produkter</div>
+          </a>
           <a href="http://localhost:3000/admin/products/new">
-            <div class="button">Ny produkt</div>
+            <div class="button two">Ny produkt</div>
           </a>
           <table>
             <tr>
@@ -26,18 +30,8 @@
               <th>SKU</th>
               <th>Pris</th>
             </tr>
-            <tr>
-              <td class="no-bottom-border">Svart T-Shirt</td>
-              <td>AAA111</td>
-              <td>199</td>
-            </tr>
-            <tr>
-              <td>Vit T-Shirt</td>
-              <td>BBB111</td>
-              <td>199</td>
-            </tr>
-            <tr>
-              <td>...</td>
+            <tr class="empty">
+              <td class="no-bottom-border"></td>
               <td></td>
               <td></td>
             </tr>
