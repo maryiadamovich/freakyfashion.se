@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administration</title>
-    <link rel="stylesheet" href="/stylesheets/admin/new.css">
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <h2>Administration</h2>
-      </header>
-      <aside>
-        <h2>Produkter</h2>
-      </aside>
-      <article>
-        <div>
-          <h1>Produkter</h1>
-          <a href="http://localhost:3000/admin/products">
-            <div class="button">Ny produkt</div>
-          </a>
-          <table>
-            <tr>
-              <th>Namn</th>
-              <th>SKU</th>
-              <th>Pris</th>
-            </tr>
-            <tr>
-              <td class="no-bottom-border">Svart T-Shirt</td>
-              <td>AAA111</td>
-              <td>199</td>
-            </tr>
-            <tr>
-              <td>Vit T-Shirt</td>
-              <td>BBB111</td>
-              <td>199</td>
-            </tr>
-            <tr>
-              <td>...</td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </div>
-      </article>
-    </div>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration</title>
+  <link rel="stylesheet" href="/stylesheets/admin/new.css">
+  <script src="/javascripts/main_new.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h2>Administration</h2>
+    </header>
+    <aside>
+      <h2>Produkter</h2>
+    </aside>
+    <main>
+      <h1>Ny produkt</h1>
+
+      <form id="forma" method="post">
+        <label for="produkt-namn">Namn</label>
+        <input type="text" id="produkt-namn" name="name">
+
+        <label for="produkt-beskrivning">Beskrivning</label>
+        <textarea id="produkt-beskrivning" name="description" rows="5" cols="50"></textarea>
+
+        <label for="produkt-bild">Bild</label>
+        <input type="url" id="produkt-bild" name="photo">
+
+        <label for="produkt-märke">Märke</label>
+        <input type="text" id="produkt-märke" name="märke">
+
+        <label for="produkt-sku">SKU</label>
+        <input type="text" id="produkt-sku" name="sku">
+
+        <label for="produkt-pris">Pris</label>
+        <input type="number" id="produkt-pris" name="price">
+
+        <button class="button" type="submit">Lägg till</button>
+
+      </form>
+    </main>
+  </div>
+</body>
+
 </html>
