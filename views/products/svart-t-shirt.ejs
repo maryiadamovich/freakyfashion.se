@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="mode, kläder, rea">
+  <title>
+    <%= products.name_product %>
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/product-details.css">
+</head>
+
+<body>
+  <div class="page-layout-grid">
+    <header>
+      <a class="header-logo" href="http://localhost:3000">
+        <img class="resize" src="https://placehold.co/300x100/png" alt="Logo">
+      </a>
+      <div class="form-div">
+        <form action="#" id="form" name="search-form" method="post">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
+          <input type="text" id="search" name="search-input" placeholder="Sök produkt">
+        </form>
+      </div>
+      <div class="icons">
+        <a href="#" target="_self">
+          <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor"
+            class="bi bi-heart-fill" color="black" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+          </svg>
+        </a>
+        <a href="#" target="_self">
+          <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor"
+            class="bi bi-basket-fill" color="black" viewBox="0 0 16 16">
+            <path
+              d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0z" />
+          </svg>
+        </a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#" target="_self">Nyheter</a></li>
+          <li><a href="#" target="_self">Topplistan</a></li>
+          <li><a href="#" target="_self">Rea</a></li>
+          <li><a href="#" target="_self">Kampanjer</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="banner-main">
+        <div class="banner-main-photo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor"
+            class="bi bi-heart place-svg" viewBox="0 0 16 16" color="black">
+            <path
+              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+          </svg>
+          <img class="resize" src="/images/big/<%= products.name_product %>.png"
+            alt="Tjej i en <%= products.name_product %>"
+            onerror="this.onerror=null; this.src='//placehold.co/400x600.png';">
+        </div>
+        <div class="banner-main-text">
+          <h1>
+            <%= products.name_product %>
+          </h1>
+          <p><i class="size">
+              <%= products.lable %>
+            </i></p>
+          <p class="text-fix">
+            <%= products.description %>
+          </p>
+          <p>
+            <%= products.price %> SEK
+          </p>
+          <button type="submit" class="size">Lägg i varukorg</button>
+        </div>
+      </section>
+
+      <section class="banner-second hidden">
+        <h3>Liknande produkter</h3>
+
+        <a href="http://localhost:3000/products/<%= variant[0].name_product.toLowerCase() %>" target="_self">
+          <div class="banner-second-item item1">
+            <img class="resize" src="/images/<%= variant[0].name_product %>.png" alt="<%= variant[0].name_product %>"
+              onerror="this.onerror=null; this.src='//placehold.co/300x400.png';">
+            <div class="banner-second-text">
+              <span>
+                <%= variant[0].name_product %>
+              </span>
+              <span>
+                <%= variant[0].price %> SEK
+              </span>
+              <span><i class="size">
+                  <%= variant[0].lable %>
+                </i></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="http://localhost:3000/products/<%= variant[1].name_product.toLowerCase() %>" target="_self">
+          <div class="banner-second-item item2">
+            <img class="resize" src="/images/<%= variant[1].name_product %>.png" alt="<%= variant[1].name_product %>"
+              onerror="this.onerror=null; this.src='//placehold.co/300x400.png';">
+            <div class="banner-second-text">
+              <span>
+                <%= variant[1].name_product %>
+              </span>
+              <span>
+                <%= variant[1].price %> SEK
+              </span>
+              <span><i class="size">
+                  <%= variant[1].lable %>
+                </i></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="http://localhost:3000/products/<%= variant[2].name_product.toLowerCase() %>" target="_self">
+          <div class="banner-second-item item3">
+            <img class="resize" src="/images/<%= variant[2].name_product %>.png" alt="<%= variant[2].name_product %>"
+              onerror="this.onerror=null; this.src='//placehold.co/300x400.png';">
+            <div class="banner-second-text">
+              <span>
+                <%= variant[2].name_product %>
+              </span>
+              <span>
+                <%= variant[2].price %> SEK
+              </span>
+              <span><i class="size">
+                  <%= variant[2].lable %>
+                </i></span>
+            </div>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <aside class="aside">
+      <div>
+        <div class="earth">
+          <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor"
+            class="bi bi-globe-central-south-asia svg" viewBox="0 0 16 16">
+            <path
+              d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M4.882 1.731a.48.48 0 0 0 .14.291.487.487 0 0 1-.126.78l-.291.146a.7.7 0 0 0-.188.135l-.48.48a1 1 0 0 1-1.023.242l-.02-.007a1 1 0 0 0-.462-.04 7 7 0 0 1 2.45-2.027m-3 9.674.86-.216a1 1 0 0 0 .758-.97v-.184a1 1 0 0 1 .445-.832l.04-.026a1 1 0 0 0 .152-1.54L3.121 6.621a.414.414 0 0 1 .542-.624l1.09.818a.5.5 0 0 0 .523.047.5.5 0 0 1 .724.447v.455a.8.8 0 0 0 .131.433l.795 1.192a1 1 0 0 1 .116.238l.73 2.19a1 1 0 0 0 .949.683h.058a1 1 0 0 0 .949-.684l.73-2.189a1 1 0 0 1 .116-.238l.791-1.187A.45.45 0 0 1 11.743 8c.16 0 .306.084.392.218.557.875 1.63 2.282 2.365 2.282l.04-.001a7.003 7.003 0 0 1-12.658.905Z" />
+          </svg>
+          <span>Gratis frakt och returer</span>
+        </div>
+        <div class="plane">
+          <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor"
+            class="bi bi-airplane-engines-fill svg" viewBox="0 0 16 16">
+            <path
+              d="M8 0c-.787 0-1.292.592-1.572 1.151A4.35 4.35 0 0 0 6 3v3.691l-2 1V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.191l-1.17.585A1.5 1.5 0 0 0 0 10.618V12a.5.5 0 0 0 .582.493l1.631-.272.313.937a.5.5 0 0 0 .948 0l.405-1.214 2.21-.369.375 2.253-1.318 1.318A.5.5 0 0 0 5.5 16h5a.5.5 0 0 0 .354-.854l-1.318-1.318.375-2.253 2.21.369.405 1.214a.5.5 0 0 0 .948 0l.313-.937 1.63.272A.5.5 0 0 0 16 12v-1.382a1.5 1.5 0 0 0-.83-1.342L14 8.691V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v.191l-2-1V3c0-.568-.14-1.271-.428-1.849C9.292.591 8.787 0 8 0" />
+          </svg>
+          <span>Expressfrakt</span>
+        </div>
+        <div class="shield">
+          <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor"
+            class="bi bi-shield-shaded svg" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M8 14.933a1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56" />
+          </svg>
+          <span>Säkra betalningar</span>
+        </div>
+        <div class="smile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor"
+            class="bi bi-emoji-smile svg" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+            <path
+              d="M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5" />
+          </svg>
+          <span>Nyheter varje dag</span>
+        </div>
+      </div>
+    </aside>
+
+    <footer>
+      <div class="footer-first">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Shopping
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <ul>
+                  <li>Vinterjackor</li>
+                  <li>Pufferjackor</li>
+                  <li>Kappa</li>
+                  <li>Trenchcoats</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Mina Sidor
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <ul>
+                  <li>Mina Ordrar</li>
+                  <li>Mitt Konto</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Kundtjänst
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <ul>
+                  <li>Returnpolicy</li>
+                  <li>Integritetspolicy</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-variant2 hidden">
+          <div class="footer-shopping">
+            <ul>
+              <li>Shopping</li>
+              <li>Vinterjackor</li>
+              <li>Pufferjackor</li>
+              <li>Kappa</li>
+              <li>Trenchcoats</li>
+            </ul>
+          </div>
+          <div class="footer-minaSidor">
+            <ul>
+              <li>Mina Sidor</li>
+              <li>Mina Ordrar</li>
+              <li>Mitt Konto</li>
+            </ul>
+          </div>
+          <div class="footer-kundTjanst">
+            <ul>
+              <li>Kundtjänst</li>
+              <li>Returnpolicy</li>
+              <li>Integritetspolicy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor"
+          class="bi bi-c-circle" viewBox="0 0 16 16">
+          <path
+            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512" />
+        </svg>
+        <span>Freaky Fashion</span>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
