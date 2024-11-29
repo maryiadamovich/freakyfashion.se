@@ -249,6 +249,7 @@ main {
     grid-template-columns: 30% 1fr 15% 10%;
     grid-template-rows: 15% 1fr 10% 10%;
     position: relative;
+    align-items: stretch;
 }
 
 .img-grid-1,
@@ -378,7 +379,9 @@ footer {
 
 
 @media only screen and (min-width: 640px) {
-
+    .hidden-row {
+        overflow: visible;
+    }
     span,
     p {
         font-size: 1em;

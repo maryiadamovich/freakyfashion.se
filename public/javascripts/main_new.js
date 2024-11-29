@@ -3,6 +3,7 @@ document.querySelector('#forma')
     .addEventListener('submit', function (event) {
         event.preventDefault();
         fetchDataPost(event);
+        event.target.reset();
     });
 
 function fetchDataPost(event) {

@@ -208,7 +208,7 @@ main {
     width: 100%;
 }
 
-h1{
+h1 {
     font-weight: bold;
 }
 
@@ -223,7 +223,9 @@ button[type="submit"] {
     border-radius: 10px;
     font-size: 2em;
 }
-
+.banner-second{
+    display: none;
+}
 /*-----------aside-------------*/
 aside {
     grid-area: aside;
@@ -333,10 +335,12 @@ footer {
 
     /*---------section-main---------*/
     .banner-main {
-        grid-template-areas:
-            "banner-main-photo banner-main-text";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
     }
-
+    .banner-main-photo{
+        grid-area: 1/1/2/2;
+    }
     .place-svg {
         display: none;
     }
@@ -346,6 +350,7 @@ footer {
     }
 
     .banner-main-text {
+        grid-area: 1/2/2/3;
         padding-left: 2rem;
         margin: 0;
         text-align: justify;
@@ -359,22 +364,28 @@ footer {
     }
 
     /*-------section-second--------*/
-
-    .banner-second.hidden {
+    
+    .banner-second {
         grid-area: banner-second;
         display: grid;
-        grid-template-areas:
-            "h3 h3 h3"
-            "item1 item2 item3";
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 10% 1fr;
         gap: 2rem;
     }
 
     h3 {
-        grid-area: h3;
+        grid-area: 1/1/2/4;
         text-align: center;
         margin-top: 1.5rem;
         margin-bottom: 0;
         font-size: 1.5em;
+    }
+
+    .banner-second-item{
+        display: grid;
+        grid-template-rows: 1fr 10%;
+        grid-template-columns: 1fr;
+        align-items: stretch;
     }
 
     .item1 {
@@ -386,10 +397,15 @@ footer {
     }
 
     .item3 {
-        grid-area: item3;
+        grid-area: 2/3/3/4;
     }
 
+    .img1{
+        grid-area: 1/1/2/2;
+    }
+   
     .banner-second-text {
+        grid-area: 2/1/3/2;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -461,7 +477,9 @@ footer {
     .banner-main-text {
         width: 70%;
     }
-
+    .banner-second {
+        gap: 4rem;
+    }
     /*-----------aside-------------*/
     .aside div {
         flex-wrap: nowrap;

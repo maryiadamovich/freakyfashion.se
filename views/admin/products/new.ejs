@@ -22,7 +22,8 @@
 
       <form id="forma" method="post">
         <label for="produkt-namn">Namn</label>
-        <input type="text" id="produkt-namn" name="name">
+        <input type="text" id="produkt-namn" name="name" required pattern=".*\S.*"
+          title="The name must include at least one character">
 
         <label for="produkt-beskrivning">Beskrivning</label>
         <textarea id="produkt-beskrivning" name="description" rows="5" cols="50"></textarea>

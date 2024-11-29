@@ -16,22 +16,22 @@ router.get('/api/products', function (req, res, next) {
 });
 
 router.post('/api/products', function (req, res, next) {
-try{
-  const product = {
-    name: req.body.name,
-    description: req.body.description,
-    photo: req.body.photo,
-    lable: req.body.lable,
-    sku: req.body.sku,
-    price: req.body.price
-  }
-  
-  db.prepare(`
+  try {
+    const product = {
+      name: req.body.name.toLowerCase(),
+      description: req.body.description,
+      photo: req.body.photo,
+      lable: req.body.lable,
+      sku: req.body.sku,
+      price: req.body.price
+    }
+
+    db.prepare(`
     INSERT INTO products (name_product, description, photo, lable, sku, price)
     VALUES (@name, @description, @photo, @lable, @sku, @price)
     `).run(product);
 
-  res.status("201").end();
+    res.status("201").end();
   }
   catch (err) {
     console.log(err);

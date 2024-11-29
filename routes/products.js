@@ -5,25 +5,45 @@ const db = new Database('./db/freakyfashion.db', { verbose: console.log });
 
 
 router.get('/:name_product', function (req, res, next) {
+  let productName;
+  let sql;
 
-  let productName = capitalizeAndFormat(req.params.name_product);
 
-  const sql = db.prepare(`
-    SELECT name_product,
-           description,
-           lable,
-           price
-    FROM products
-    WHERE name_product = '${productName}'
-  `).get();
+  const getSql = (elem) => {
+    return db.prepare(`
+   SELECT name_product,
+          description,
+          photo,
+          lable,
+          price
+   FROM products
+   WHERE name_product = '${elem}'
+ `).get();
+  };
 
-  const newImg = db.prepare(`
+  try {
+    productName = capitalizeAndFormat(req.params.name_product);
+    sql = sqlObject(getSql(productName));
+  }
+  catch (err) {
+    console.log(err.message);
+  }
+
+  if (!sql) {
+    productName = req.params.name_product;
+    sql = sqlObject(getSql(productName));
+  }
+
+  const allSqlObjects = db.prepare(`
     SELECT name_product,
            photo,
            lable,
            price
     FROM products
   `).all();
+
+  console.log(allSqlObjects);
+  const newImg = sqlObjects(allSqlObjects);
 
   const rows = uniqueArray(newImg).filter(elem => elem.name_product !== sql.name_product);
 
@@ -34,6 +54,11 @@ router.get('/:name_product', function (req, res, next) {
   });
 
 });
+
+
+
+
+
 
 const uniqueArray = (array) => {
   const uniqueNumber = [];
@@ -50,6 +75,54 @@ const capitalizeAndFormat = (params) => {
   return params.split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
     .join('-');
+}
+
+const sqlObject = (elem) => {
+
+  if (elem.description == "") {
+    elem.description = "Beskrivning kommer snart";
+  }
+  if (elem.photo == "") {
+    elem.photo = "https://placehold.co/300x400.png";
+  }
+  if (elem.lable == "") {
+    elem.lable = "Mark";
+  }
+  if (elem.sku == "") {
+    elem.sku = "NULL";
+  }
+  if (elem.price == "") {
+    elem.price = "200";
+  }
+
+  return elem;
+}
+
+
+const sqlObjects = (array) => {
+
+  array.forEach((elem) => {
+
+    if (elem.name_product == "") {
+      elem.name_product = "Unknown product";
+    };
+    if (elem.description == "") {
+      elem.description = "Beskrivning kommer snart";
+    }
+    if (elem.photo == "") {
+      elem.photo = "https://placehold.co/300x400.png";
+    }
+    if (elem.lable == "") {
+      elem.lable = "Mark";
+    }
+    if (elem.sku == "") {
+      elem.sku = "NULL";
+    }
+    if (elem.price == "") {
+      elem.price = "200";
+    }
+  });
+  return array;
 }
 
 module.exports = router;

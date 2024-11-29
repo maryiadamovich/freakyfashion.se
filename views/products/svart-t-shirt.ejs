@@ -62,9 +62,13 @@
             <path
               d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
           </svg>
-          <img class="resize" src="/images/big/<%= products.name_product %>.png"
-            alt="Tjej i en <%= products.name_product %>"
-            onerror="this.onerror=null; this.src='//placehold.co/400x600.png';">
+          <img class="resize" <% if (products.photo.includes("image")) { %>
+          src="/images/big/<%= products.name_product %>.png"
+            <% } else { %>
+              src="https://placehold.co/400x600.png"
+              <% } %>
+                alt="Tjej i en <%= products.name_product %>"
+                  >
         </div>
         <div class="banner-main-text">
           <h1>
@@ -83,12 +87,13 @@
         </div>
       </section>
 
-      <section class="banner-second hidden">
+      <section class="banner-second">
         <h3>Liknande produkter</h3>
 
-        <a href="http://localhost:3000/products/<%= variant[0].name_product.toLowerCase() %>" target="_self">
-          <div class="banner-second-item item1">
-            <img class="resize" src="/images/<%= variant[0].name_product %>.png" alt="<%= variant[0].name_product %>"
+        <a href="http://localhost:3000/products/<%= variant[0].name_product.toLowerCase() %>" target="_self"
+          class="item1">
+          <article class="banner-second-item">
+            <img class="resize img1" src="<%= variant[0].photo %>" alt="<%= variant[0].name_product %>"
               onerror="this.onerror=null; this.src='//placehold.co/300x400.png';">
             <div class="banner-second-text">
               <span>
@@ -101,12 +106,13 @@
                   <%= variant[0].lable %>
                 </i></span>
             </div>
-          </div>
+          </article>
         </a>
 
-        <a href="http://localhost:3000/products/<%= variant[1].name_product.toLowerCase() %>" target="_self">
-          <div class="banner-second-item item2">
-            <img class="resize" src="/images/<%= variant[1].name_product %>.png" alt="<%= variant[1].name_product %>"
+        <a href="http://localhost:3000/products/<%= variant[1].name_product.toLowerCase() %>" target="_self"
+          class="item2">
+          <article class="banner-second-item">
+            <img class="resize img1" src="<%= variant[1].photo %>" alt="<%= variant[1].name_product %>"
               onerror="this.onerror=null; this.src='//placehold.co/300x400.png';">
             <div class="banner-second-text">
               <span>
@@ -119,12 +125,13 @@
                   <%= variant[1].lable %>
                 </i></span>
             </div>
-          </div>
+          </article>
         </a>
 
-        <a href="http://localhost:3000/products/<%= variant[2].name_product.toLowerCase() %>" target="_self">
-          <div class="banner-second-item item3">
-            <img class="resize" src="/images/<%= variant[2].name_product %>.png" alt="<%= variant[2].name_product %>"
+        <a href="http://localhost:3000/products/<%= variant[2].name_product.toLowerCase() %>" target="_self"
+          class="item3">
+          <article class="banner-second-item">
+            <img class="resize img1" src="<%= variant[2].photo %>" alt="<%= variant[2].name_product %>"
               onerror="this.onerror=null; this.src='//placehold.co/300x400.png';">
             <div class="banner-second-text">
               <span>
@@ -137,7 +144,7 @@
                   <%= variant[2].lable %>
                 </i></span>
             </div>
-          </div>
+          </article>
         </a>
       </section>
     </main>
