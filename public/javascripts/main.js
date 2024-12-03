@@ -1,6 +1,4 @@
 
-const table = document.querySelector("tbody");
-
 document.getElementById('fetch-link')
     .addEventListener('click', function (event) {
         event.preventDefault();
